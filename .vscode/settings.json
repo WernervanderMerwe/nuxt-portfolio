@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+      "*.vue": "vue",
+      "*.css": "tailwindcss"
+    },
+    "tailwindCSS.includeLanguages": {
+      "vue": "html"
+    },
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "css.validate": false,
+    "tailwindCSS.emmetCompletions": true
+  }
