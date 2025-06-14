@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="prose dark:prose-invert">
     <ContentRenderer v-if="post" :value="post" />
     <template v-else>
       <p>No content found.</p>
@@ -13,5 +13,8 @@ const { data: post } = await useAsyncData(
   `blog-${slug}`,
   () => queryCollection('blog').path(`/blog/${slug}`).first()
 )
-console.log(slug);
+
+useHead({
+  title: slug?.toString().charAt(0)?.toUpperCase() + slug?.toString().slice(1) ?? 'Title'
+})
 </script>

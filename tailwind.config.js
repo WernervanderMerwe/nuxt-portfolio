@@ -7,4 +7,7 @@ module.exports = {
       './app/app.vue',
       './app/error.vue'
     ],
+      plugins: [
+        require('@tailwindcss/typography'),
+      ],
   }

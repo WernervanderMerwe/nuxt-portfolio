@@ -1,12 +1,12 @@
 <template>
-  <div>this page is about me</div>
-  <!-- <div>
-    <button @click="enableCustomLayout">Update Layout</button>
-  </div> -->
+  <article class="prose dark:prose-invert">
+    <ContentRenderer v-if="post" :value="post" />
+  </article>
 </template>
 
-<script setup>
-  useHead({
-    title: 'About'
-  })
+<script setup lang="ts">
+const { data: post } = await useAsyncData(
+  `blog-${'about'}`,
+  () => queryCollection('blog').path(`/blog/about`).first()
+)
 </script>
